@@ -10,10 +10,12 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LoginView {
 
-	private JFrame frame;
+	private JFrame frame_LoginView;
 	private JTextField textField_Email;
 	private JPasswordField passwordField_password;
 
@@ -25,12 +27,20 @@ public class LoginView {
 			public void run() {
 				try {
 					LoginView window = new LoginView();
-					window.frame.setVisible(true);
+					window.frame_LoginView.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+	}
+
+	public JFrame getFrame_LoginView() {
+		return frame_LoginView;
+	}
+
+	public void setFrame_LoginView(JFrame frame_LoginView) {
+		this.frame_LoginView = frame_LoginView;
 	}
 
 	/**
@@ -44,15 +54,15 @@ public class LoginView {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 800, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frame_LoginView = new JFrame();
+		frame_LoginView.getContentPane().setBackground(Color.BLACK);
+		frame_LoginView.setBounds(100, 100, 800, 500);
+		frame_LoginView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame_LoginView.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 10, 766, 443);
-		frame.getContentPane().add(panel);
+		frame_LoginView.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();

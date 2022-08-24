@@ -13,7 +13,7 @@ import javax.swing.JButton;
 
 public class RegisterView {
 
-	private JFrame frame;
+	private JFrame frame_RegisterView;
 	private JTextField textField_FullName;
 	private JTextField textField_Age;
 	private JTextField textField_Email;
@@ -27,12 +27,20 @@ public class RegisterView {
 			public void run() {
 				try {
 					RegisterView window = new RegisterView();
-					window.frame.setVisible(true);
+					window.frame_RegisterView.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+	}
+	
+	public JFrame getFrame_RegisterView() {
+		return frame_RegisterView;
+	}
+
+	public void setFrame_RegisterView(JFrame frame_RegisterView) {
+		this.frame_RegisterView = frame_RegisterView;
 	}
 
 	/**
@@ -46,13 +54,13 @@ public class RegisterView {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.BLACK);
-		frame.getContentPane().setLayout(null);
+		frame_RegisterView = new JFrame();
+		frame_RegisterView.getContentPane().setBackground(Color.BLACK);
+		frame_RegisterView.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 10, 766, 443);
-		frame.getContentPane().add(panel);
+		frame_RegisterView.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
@@ -109,8 +117,8 @@ public class RegisterView {
 		btn_Register.setFont(new Font("Calibri", Font.BOLD, 15));
 		btn_Register.setBounds(130, 316, 96, 29);
 		panel_1.add(btn_Register);
-		frame.setBounds(100, 100, 800, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame_RegisterView.setBounds(100, 100, 800, 500);
+		frame_RegisterView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }
